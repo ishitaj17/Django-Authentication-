@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Profile</title>
+  </head>
+  <body>
+    <h2>Profile</h2>
+    <p>Username: {{ user.username }}</p>
+    <p>Email: {{ user.email }}</p>
+    <p>Date Joined: {{ user.date_joined }}</p>
+    <p>Last Updated: {{ user.last_login }}</p>
+    <a href="{% url 'dashboard' %}">Back to Dashboard</a> |
+    <a href="{% url 'logout' %}">Logout</a>
+  </body>
+</html>

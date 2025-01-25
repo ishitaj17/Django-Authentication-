@@ -1,0 +1,46 @@
+{% comment %} <!DOCTYPE html>
+<html>
+  <head>
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <h2>Sign Up</h2>
+    <form method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit">Sign Up</button>
+    </form>
+    <a href="{% url 'login' %}">Back to Login</a>
+  </body>
+</html>
+{% endcomment %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <h2>Sign Up</h2>
+
+    <!-- Display any error messages if the form is invalid -->
+    {% if form.errors %}
+    <div class="errors">
+      <ul>
+        {% for field in form %} {% for error in field.errors %}
+        <li>{{ error }}</li>
+        {% endfor %} {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    <!-- Sign Up Form -->
+    <form method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <!-- Render the form fields -->
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <a href="{% url 'login' %}">Back to Login</a>
+    <!-- Link to login page -->
+  </body>
+</html>
